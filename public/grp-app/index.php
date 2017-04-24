@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GPR - Gerenciamento Programado de Rotas</title>
+    <title>GDD - Gerenciamento de dispositivos</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="grp-app/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

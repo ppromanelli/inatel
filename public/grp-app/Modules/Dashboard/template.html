@@ -1,0 +1,73 @@
+<div ng-init="init()">
+    <div class="row">
+        <div class="col-lg-12" style='margin-bottom:10px'>
+            <h1 class="page-header">Dashboard do Gerente</h1>
+            <div class='pull-right'>
+                <button ng-class="{'btn btn-success':chart == true,'btn btn-default':chart == false}" type="button" ng-click='chart = true'>
+                    <i class="fa fa-bar-chart"></i>
+                </button>
+                <button ng-class="{'btn btn-success':chart == false,'btn btn-default':chart == true}" type="button" ng-click='chart = false'>
+                    <i class="fa fa-table"></i>
+                </button>
+            </div>
+        </div>
+
+                    <!-- /.col-lg-12 -->
+    </div>
+                <!-- /.row -->
+    <div class="row" ng-show='chart'>
+        
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   Operadora x celular
+                </div>
+                        <!-- /.panel-heading -->
+                <div class="panel-body">
+                   <canvas 
+                        class="chart chart-line" chart-data="service" chart-labels="labelsService" chart-series="seriesService">
+                    </canvas> 
+                </div>
+                        <!-- /.panel-body -->
+            </div>
+        </div>
+            
+    </div>
+    <div class="row" ng-hide='chart'>
+        
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Dispositivos com serviço da Vivo
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nome do Usuario</th>
+                                    <th>Dispositivo</th>
+                                    <th>MAC</th>
+                                    <th>Operadora</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat='service in serviceData'>
+                                    <td>{{$index+1}}</td>
+                                    <td>{{service.full_name}}</td>
+                                    <td>{{service.devices_name}}</td>
+                                    <td>{{service.mac}}</td>
+                                    <td>{{service.type}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                            <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+        </div>
+    </div>
+</div>
